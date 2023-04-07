@@ -1,9 +1,9 @@
 # mg
 Muscle Gold
 
-npm install
-npm run dev
+- npm install
+- npm run dev
 
-react
-vite
-local storage
+- react
+- vite
+- local storage
