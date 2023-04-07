@@ -40,9 +40,7 @@ export default function App() {
           </Routes>
         </div>
       </BrowserRouter>
-      {/* <h1>My Workout Tracker</h1>
-      <AddWorkoutForm onAdd={handleAddWorkout} />
-      <WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} /> */}
+
       <footer>
         <p>
           Muscle Gold {new Date().getFullYear()} {'\u00b0'} and All That Sweat
