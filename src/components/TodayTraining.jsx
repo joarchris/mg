@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ClipboardIcon } from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 
 const TodayTraining = () => {
   const [today, setToday] = useState('');
@@ -43,7 +43,7 @@ const TodayTraining = () => {
       <h4>{today}'s training</h4>
       <p>{getTrainingForToday()}</p>
       <span onClick={handleCopyToClipboard}>
-        <ClipboardIcon height={15} />
+        <DocumentDuplicateIcon height={15} />
       </span>
     </div>
   );
