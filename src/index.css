@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;400&display=swap');
 /* layout */
 :root {
-  --primary: #489a81;
+  --alert: #f24236;
   --error: #e7195a;
   --secondary: #fbf9fa;
+  --primary: #51a3a3;
 }
 body {
   background: #f1f1f1;
@@ -53,7 +54,7 @@ header img {
 }
 
 .today-details {
-  background: var(--primary);
+  background: var(--alert);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
