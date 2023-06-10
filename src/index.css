@@ -4,6 +4,7 @@
 :root {
   --primary: #1aac83;
   --error: #e7195a;
+  --secondary: #fbf9fa;
 }
 body {
   background: #f1f1f1;
@@ -49,6 +50,37 @@ header img {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.today-details {
+  background: #fa8181;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.today-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 100vmax;
+  color: rgb(99, 98, 98);
+}
+
+.today-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--secondary);
+}
+.today-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
 }
 
 .workout-info {

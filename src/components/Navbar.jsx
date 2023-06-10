@@ -8,6 +8,9 @@ const Navbar = () => {
           <img src="mg-logo.png" alt="logo" />
         </Link>
         <div className="pages">
+          <Link to="/training-plan">
+            <button>Training plan</button>
+          </Link>
           <Link to="/adding-new">
             <button>Add New</button>
           </Link>

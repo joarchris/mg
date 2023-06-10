@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AddWorkoutForm from './components/AddWorkoutForm';
 import Navbar from './components/Navbar';
+import TodayTraining from './components/TodayTraining';
+import TrainingPlan from './components/TrainingPlan';
 import WorkoutList from './components/WorkoutList';
 
 export default function App() {
@@ -33,9 +35,12 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <Navbar />
+
         <div className="pages">
+          <TodayTraining />
           <Routes>
             <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
+            <Route path="/training-plan" element={<TrainingPlan />} />
             <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />
           </Routes>
         </div>
