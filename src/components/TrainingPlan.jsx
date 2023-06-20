@@ -1,3 +1,4 @@
+import { TrashIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react';
 
 const TrainingPlan = () => {
@@ -13,6 +14,15 @@ const TrainingPlan = () => {
 
   const handleChange = (e) => {
     setSelectedDay(e.target.value);
+  };
+
+  const handleDelete = (index) => {
+    const confirmDelete = window.confirm('YO YO! Are you sure you want to delete this training day?');
+    if (confirmDelete) {
+      const updatedPlan = [...plan];
+      updatedPlan.splice(index, 1);
+      setPlan(updatedPlan);
+    }
   };
 
   const handlePlanUpdate = () => {
@@ -67,6 +77,9 @@ const TrainingPlan = () => {
                 onChange={(e) => handleTrainingChange(e, index)}
               />
             </label>
+            <span className="delete-button" onClick={() => handleDelete(index)}>
+              <TrashIcon height={15} />
+            </span>
           </div>
         ))}
       </form>

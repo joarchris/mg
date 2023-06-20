@@ -13,6 +13,13 @@ function WorkoutList({ workouts, onDelete }) {
 function Workout({ workout, onDelete }) {
   const time = formatDistance(new Date(), new Date(workout.createdAt));
 
+  const handleDelete = () => {
+    // Display an alert before deleting the workout
+    if (window.confirm('YO YO! Are you sure you want to delete this workout?')) {
+      onDelete();
+    }
+  };
+
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
@@ -25,7 +32,7 @@ function Workout({ workout, onDelete }) {
         <strong>Time spent (min) or reps:</strong> {workout.timeSpent}{' '}
       </p>
       <p>{time} ago</p>
-      <span onClick={onDelete}>
+      <span onClick={handleDelete}>
         <TrashIcon height={15} />
       </span>
     </div>
