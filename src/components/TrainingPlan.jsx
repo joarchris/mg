@@ -51,19 +51,25 @@ const TrainingPlan = () => {
     <div className="training-plan">
       <h2>Training Plan</h2>
       <div className="add-training">
-        <select className="select-day" value={selectedDay} onChange={handleChange}>
-          <option value="">Select your training day('s')</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
-        </select>
-        <button className="add-button" onClick={handlePlanUpdate} disabled={!selectedDay}>
-          Add Training day
-        </button>
+        {plan.length < 7 ? (
+          <>
+            <select className="select-day" value={selectedDay} onChange={handleChange}>
+              <option value="">Select a day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <button className="add-button" onClick={handlePlanUpdate} disabled={!selectedDay}>
+              Add Training
+            </button>
+          </>
+        ) : (
+          <p>YO YO! All days have been added 💪🏼</p>
+        )}
       </div>
       <form>
         {plan.map((item, index) => (
