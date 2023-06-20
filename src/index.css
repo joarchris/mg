@@ -130,10 +130,12 @@ header button {
 }
 
 label,
-input {
+input,
+select {
   display: block;
 }
-input {
+input,
+select {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;

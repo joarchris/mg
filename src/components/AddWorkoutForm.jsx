@@ -33,7 +33,16 @@ export default function AddWorkoutForm({ onAdd }) {
     <form className="create" onSubmit={handleSubmit}>
       <label>
         Title:
-        <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
+        <select type="text" value={title} onChange={(event) => setTitle(event.target.value)}>
+          <option value="Strength ">Strength (4-6 weeks)</option>
+          <option value="Power">Power (4 weeks)</option>
+          <option value="Endurance">Endurance (optional)</option>
+          <option value="Power-Endurance">Power-Endurance (4 weeks)</option>
+          <option value="Projecting">Projecting (4-6 weeks)</option>
+          <option value="Antagonist">Antagonist (Forebyggende)</option>
+          <option value="Agonist">Agonist (Styrketrening)</option>
+          <option value="Active Resting Day">Aktiv hviledag</option>
+        </select>
       </label>
       <label>
         More info:
