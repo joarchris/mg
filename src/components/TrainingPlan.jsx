@@ -16,9 +16,18 @@ const TrainingPlan = () => {
   };
 
   const handlePlanUpdate = () => {
-    const updatedPlan = [...plan, { day: selectedDay, training: '' }];
-    setPlan(updatedPlan);
-    setSelectedDay('');
+    // Check if the selectedDay already exists in the plan
+    const isDayAlreadyAdded = plan.some((item) => item.day === selectedDay);
+
+    if (isDayAlreadyAdded) {
+      // Handle the case where the day is already in the plan
+      alert('This day is already added to the plan.');
+    } else {
+      // Add the training item to the plan
+      const updatedPlan = [...plan, { day: selectedDay, training: '' }];
+      setPlan(updatedPlan);
+      setSelectedDay('');
+    }
   };
 
   const handleTrainingChange = (e, index) => {
@@ -33,7 +42,7 @@ const TrainingPlan = () => {
       <h2>Training Plan</h2>
       <div className="add-training">
         <select className="select-day" value={selectedDay} onChange={handleChange}>
-          <option value="">Select a day</option>
+          <option value="">Select your training day('s')</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
@@ -43,7 +52,7 @@ const TrainingPlan = () => {
           <option value="Sunday">Sunday</option>
         </select>
         <button className="add-button" onClick={handlePlanUpdate} disabled={!selectedDay}>
-          Add Training
+          Add Training day
         </button>
       </div>
       <form>

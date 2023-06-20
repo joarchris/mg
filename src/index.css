@@ -186,3 +186,14 @@ footer {
   color: #fff;
   background: var(--primary);
 }
+
+.add-button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Barlow';
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
