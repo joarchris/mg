@@ -12,7 +12,7 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <img src="mg-logo.png" alt="logo" />
+          <img src="mg-logo.png" alt="logo" width={200} />
         </Link>
         <div className={`m-pages ${showMenu ? 'show-menu' : ''}`}>
           <Link to="/training-plan">

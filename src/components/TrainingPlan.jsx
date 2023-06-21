@@ -64,7 +64,7 @@ const TrainingPlan = () => {
               <option value="Sunday">Sunday</option>
             </select>
             <button className="add-button" onClick={handlePlanUpdate} disabled={!selectedDay}>
-              Add Training
+              Add Training Day
             </button>
           </>
         ) : (

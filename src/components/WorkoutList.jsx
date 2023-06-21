@@ -2,8 +2,12 @@ import { formatDistance } from 'date-fns';
 import { TrashIcon } from '@heroicons/react/24/outline';
 
 function WorkoutList({ workouts, onDelete }) {
+  if (workouts.length === 0) {
+    return null; // Return null if the array is empty
+  }
   return (
     <>
+      <span> Recent Workouts:</span>
       {workouts.map((workout) => (
         <Workout key={workout.createdAt} workout={workout} onDelete={() => onDelete(workout)} />
       ))}
