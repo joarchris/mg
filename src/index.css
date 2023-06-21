@@ -29,8 +29,7 @@ header a {
   padding-left: 20px;
 }
 header img {
-  width: 100%;
-  height: 60px;
+  aspect-ratio: 2 / 1;
 }
 
 .pages {
