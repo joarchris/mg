@@ -29,7 +29,7 @@ header a {
   padding-left: 20px;
 }
 header img {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: auto;
 }
 
 .pages {
