@@ -30,6 +30,7 @@ header a {
 }
 header img {
   aspect-ratio: auto;
+  width: 100px;
 }
 
 .pages {
