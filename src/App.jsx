@@ -8,6 +8,7 @@ import TodayTraining from './components/TodayTraining';
 import TrainingPlan from './components/TrainingPlan';
 import WorkoutList from './components/WorkoutList';
 import Info from './components/Info';
+import Error from './components/Error';
 
 export default function App() {
   const [workouts, setWorkouts] = useState(() => {
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="/training-plan" element={<TrainingPlan />} />
             <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />
             <Route path="/info" element={<Info />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </div>
       </BrowserRouter>

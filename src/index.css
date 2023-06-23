@@ -3,10 +3,44 @@
 /* layout */
 :root {
   --alert: #f24236;
-  --error: #e7195a;
+  --error: #f24236;
   --secondary: #fbf9fa;
   --primary: #51a3a3;
 }
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Barlow';
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.error-button {
+  background: var(--error);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Barlow';
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
 body {
   background: #f1f1f1;
   margin: 0;
