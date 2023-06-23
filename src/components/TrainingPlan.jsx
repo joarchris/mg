@@ -1,5 +1,6 @@
 import { TrashIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const TrainingPlan = () => {
   const [plan, setPlan] = useState(() => {
@@ -49,7 +50,9 @@ const TrainingPlan = () => {
 
   return (
     <div className="training-plan">
-      <h2>Training Plan</h2>
+      <h3>
+        Training Plan based on <Link to="/info">Phase</Link>
+      </h3>
       <div className="add-training">
         {plan.length < 7 ? (
           <>
