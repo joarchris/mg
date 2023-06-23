@@ -35,7 +35,7 @@ const TodayTraining = () => {
 
   function getTrainingForToday() {
     const todayTraining = trainingPlan.find((item) => item.day === today);
-    return todayTraining ? todayTraining.training : '';
+    return todayTraining ? todayTraining.training : 'WHAT? No training set for today. Enjoy your day off 😴';
   }
 
   return (

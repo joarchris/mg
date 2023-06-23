@@ -15,7 +15,7 @@ body {
 header {
   background: #fff;
 }
-header .container {
+header .nav-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px 20px;
@@ -212,7 +212,7 @@ footer {
 }
 
 /* Navbar stuff */
-.container {
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -291,4 +291,22 @@ footer {
   .bar-open:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
+}
+
+/* Article stylings */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.container {
+  background: var(--primary);
+  padding: 1rem;
+}
+
+.phase-heading {
+  font-weight: bold;
+  color: #fff;
 }

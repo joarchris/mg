@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="container">
+      <div className="nav-container">
         <Link to="/">
           <img src="mg-logo.png" alt="logo" />
         </Link>
@@ -23,6 +23,9 @@ const Navbar = () => {
           </Link>
           <Link to="/">
             <button>List Workouts</button>
+          </Link>
+          <Link to="/info">
+            <button>Information</button>
           </Link>
         </div>
         <div className="burger-menu" onClick={toggleMenu}>
@@ -38,6 +41,9 @@ const Navbar = () => {
             </Link>
             <Link to="/" onClick={toggleMenu}>
               List Workouts
+            </Link>
+            <Link to="/info" onClick={toggleMenu}>
+              Information
             </Link>
           </div>
         </div>

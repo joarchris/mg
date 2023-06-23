@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import TodayTraining from './components/TodayTraining';
 import TrainingPlan from './components/TrainingPlan';
 import WorkoutList from './components/WorkoutList';
+import Info from './components/Info';
 
 export default function App() {
   const [workouts, setWorkouts] = useState(() => {
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
             <Route path="/training-plan" element={<TrainingPlan />} />
             <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />
+            <Route path="/info" element={<Info />} />
           </Routes>
         </div>
       </BrowserRouter>
