@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import AuthContext from '../stores/AuthContext';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -7,13 +8,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-
+  const { user, login, logout } = useContext(AuthContext);
+  console.log(user);
   return (
     <header>
       <div className="nav-container">
         <Link to="/">
           <img src="mg-logo.png" alt="logo" />
         </Link>
+        <button onClick={login}>Signup/Login</button> <button onClick={logout}>Log out</button>
         <div className={`m-pages ${showMenu ? 'show-menu' : ''}`}>
           <Link to="/training-plan">
             <button>Training plan</button>

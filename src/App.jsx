@@ -9,6 +9,7 @@ import TrainingPlan from './components/TrainingPlan';
 import WorkoutList from './components/WorkoutList';
 import Info from './components/Info';
 import Error from './components/Error';
+import { AuthContextProvider } from './stores/AuthContext';
 
 export default function App() {
   const [workouts, setWorkouts] = useState(() => {
@@ -18,6 +19,8 @@ export default function App() {
       createdAt: new Date(workout.createdAt),
     }));
   });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleAddWorkout = (workout) => {
     setWorkouts([...workouts, workout]);
@@ -35,20 +38,26 @@ export default function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
-        <Navbar />
+      <AuthContextProvider>
+        <BrowserRouter>
+          <Navbar />
 
-        <div className="pages">
-          <TodayTraining />
-          <Routes>
-            <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
-            <Route path="/training-plan" element={<TrainingPlan />} />
-            <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />
-            <Route path="/info" element={<Info />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+          <div className="pages">
+            {isLoggedIn && <TodayTraining />} {/* Render TodayTraining only if logged in */}
+            <Routes>
+              {isLoggedIn && (
+                <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
+              )}
+              {isLoggedIn && <Route path="/training-plan" element={<TrainingPlan />} />}
+              {isLoggedIn && <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />}
+              {isLoggedIn && <Route path="/info" element={<Info />} />}
+              {!isLoggedIn && <Route path="/" element={<Login onLogin={() => setIsLoggedIn(true)} />} />}{' '}
+              {/* Render Login component when not logged in */}
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </AuthContextProvider>
 
       <footer>
         <p>
