@@ -9,7 +9,7 @@ import TrainingPlan from './components/TrainingPlan';
 import WorkoutList from './components/WorkoutList';
 import Info from './components/Info';
 import Error from './components/Error';
-import { AuthContextProvider } from './stores/AuthContext';
+import { AuthContextProvider } from './stores/authContext';
 
 export default function App() {
   const [workouts, setWorkouts] = useState(() => {
