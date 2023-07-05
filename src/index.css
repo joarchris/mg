@@ -294,6 +294,15 @@ footer {
   text-decoration: none;
 }
 
+.menu-items span {
+  color: var(--primary);
+  margin-left: 20px;
+}
+
+.user-name {
+  color: var(--primary);
+}
+
 @media (max-width: 768px) {
   .m-pages {
     display: none;

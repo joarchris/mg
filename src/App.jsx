@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -10,6 +10,7 @@ import WorkoutList from './components/WorkoutList';
 import Info from './components/Info';
 import Error from './components/Error';
 import { AuthContextProvider } from './stores/authContext';
+import AuthContext from './stores/authContext';
 
 export default function App() {
   const [workouts, setWorkouts] = useState(() => {
@@ -20,7 +21,7 @@ export default function App() {
     }));
   });
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const { user } = useContext(AuthContext);
 
   const handleAddWorkout = (workout) => {
     setWorkouts([...workouts, workout]);
@@ -43,16 +44,12 @@ export default function App() {
           <Navbar />
 
           <div className="pages">
-            {isLoggedIn && <TodayTraining />} {/* Render TodayTraining only if logged in */}
+            <TodayTraining />
             <Routes>
-              {isLoggedIn && (
-                <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
-              )}
-              {isLoggedIn && <Route path="/training-plan" element={<TrainingPlan />} />}
-              {isLoggedIn && <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />}
-              {isLoggedIn && <Route path="/info" element={<Info />} />}
-              {!isLoggedIn && <Route path="/" element={<Login onLogin={() => setIsLoggedIn(true)} />} />}{' '}
-              {/* Render Login component when not logged in */}
+              <Route path="/" element={<WorkoutList workouts={sortedWorkouts} onDelete={handleDeleteWorkout} />} />
+              <Route path="/training-plan" element={<TrainingPlan />} />
+              <Route path="/adding-new" element={<AddWorkoutForm onAdd={handleAddWorkout} />} />
+              <Route path="/info" element={<Info />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </div>
