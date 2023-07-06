@@ -51,7 +51,10 @@ const TrainingPlan = () => {
   return (
     <div className="training-plan">
       <h3>
-        Training Plan based on <Link to="/info">Phase</Link>
+        Training Plan based on{' '}
+        <Link to="/info">
+          <button>Phase</button>
+        </Link>
       </h3>
       <div className="add-training">
         {plan.length < 7 ? (

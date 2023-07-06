@@ -270,7 +270,11 @@ footer {
   display: none;
   cursor: pointer;
 }
-
+.logout {
+  margin-left: 20px;
+  color: var(--alert);
+  background: #fff;
+}
 .menu-items {
   display: none;
   position: absolute;

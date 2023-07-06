@@ -18,16 +18,12 @@ const Navbar = () => {
             <img src="mg-logo.png" alt="logo" />
           </Link>
           {user && <p className="user-name">YO YO! {user.user_metadata.full_name}</p>}
-          {!user && (
-            <p className="user-name" onClick={login}>
-              Signup/Login, YO!
-            </p>
-          )}
+          {!user && <button onClick={login}>Signup/Login, YO!</button>}
           {user && (
             <div className={`m-pages ${showMenu ? 'show-menu' : ''}`}>
-              {!user && <button onClick={login}>Signup/Login</button>} {user && <button onClick={logout}>Log out</button>}
+              {!user && <button onClick={login}>Signup/Login</button>}
               <Link to="/training-plan">
-                <button>Training plan</button>
+                <button>Training Plan</button>
               </Link>
               <Link to="/adding-new">
                 <button>Add New Workout</button>
@@ -38,6 +34,11 @@ const Navbar = () => {
               <Link to="/info">
                 <button>Information</button>
               </Link>
+              {user && (
+                <button className="logout" onClick={logout}>
+                  Log Out
+                </button>
+              )}
             </div>
           )}
           {user && (
