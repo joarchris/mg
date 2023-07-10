@@ -54,6 +54,10 @@ const TrainingPlan = () => {
         Training Plan based on{' '}
         <Link to="/info">
           <button>Phase</button>
+        </Link>{' '}
+        and{' '}
+        <Link to="/goal">
+          <button>Goal</button>
         </Link>
       </h3>
       <div className="add-training">

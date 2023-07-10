@@ -9,7 +9,7 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
   const { user, login, logout, authReady } = useContext(AuthContext);
-  console.log(user);
+
   return (
     <header>
       {authReady && (
@@ -22,6 +22,9 @@ const Navbar = () => {
           {user && (
             <div className={`m-pages ${showMenu ? 'show-menu' : ''}`}>
               {!user && <button onClick={login}>Signup/Login</button>}
+              <Link to="/goal">
+                <button>Add Goal</button>
+              </Link>
               <Link to="/training-plan">
                 <button>Training Plan</button>
               </Link>
@@ -49,6 +52,9 @@ const Navbar = () => {
               <div className={`menu-items ${showMenu ? 'show' : ''}`}>
                 <Link to="/training-plan" onClick={toggleMenu}>
                   Training Plan
+                </Link>
+                <Link to="/goal" onClick={toggleMenu}>
+                  Set Your Goal
                 </Link>
                 <Link to="/adding-new" onClick={toggleMenu}>
                   Add New Workout

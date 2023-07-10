@@ -35,7 +35,7 @@ const Info = () => {
         <span className="phase-heading">〉PROJECTING</span>
         <p>
           The performance/projecting phase lasts 4-ish weeks and will consist of continuing routines in the power endurance
-          phase as well as climbing outside to reach the goals that were established in the beginning of the season.
+          phase as well as climbing outside to reach the goals that were established in the beginning of the period.
         </p>
 
         <span className="phase-heading">〉SET A NEW GOAL</span>

@@ -119,6 +119,16 @@ header img {
   color: #000;
 }
 
+.goal-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--alert);
+}
+
+.goal-details h4 span {
+  color: #000;
+}
+
 .workout-info {
   display: flex;
   justify-content: space-between;
@@ -278,7 +288,7 @@ footer {
 .menu-items {
   display: none;
   position: absolute;
-  top: 27%;
+  top: 33%;
   right: 0;
   background-color: #ffffff;
   padding: 1rem;
@@ -356,4 +366,10 @@ h2 {
 .phase-heading {
   font-weight: bold;
   color: #fff;
+}
+
+.goalList {
+  background: var(--primary);
+  padding: 10px;
+  margin-bottom: 10px;
 }
