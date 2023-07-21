@@ -6,6 +6,7 @@
   --error: #f24236;
   --secondary: #fbf9fa;
   --primary: #51a3a3;
+  --rating: #f24236;
 }
 h1 {
   font-size: 2rem;
@@ -371,5 +372,9 @@ h2 {
 .goalList {
   background: var(--primary);
   padding: 10px;
+  margin-bottom: 10px;
+}
+.rating {
+  color: var(--rating);
   margin-bottom: 10px;
 }
