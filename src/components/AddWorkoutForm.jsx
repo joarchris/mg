@@ -4,6 +4,7 @@ export default function AddWorkoutForm({ onAdd }) {
   const [title, setTitle] = useState('');
   const [info, setInfo] = useState('');
   const [load, setLoad] = useState('');
+  const [rating, setRating] = useState('');
   const [timeSpent, setTimeSpent] = useState('');
 
   const handleSubmit = (event) => {
@@ -12,6 +13,7 @@ export default function AddWorkoutForm({ onAdd }) {
       title,
       info,
       load,
+      rating,
       timeSpent,
       createdAt: Date.now(),
     };
@@ -19,6 +21,7 @@ export default function AddWorkoutForm({ onAdd }) {
     saveWorkout(workout); // Save the new workout to local storage
     setTitle('');
     setInfo('');
+    setRating('');
     setLoad(0);
     setTimeSpent(0);
   };
@@ -51,12 +54,24 @@ export default function AddWorkoutForm({ onAdd }) {
         <textarea value={info} onChange={(event) => setInfo(event.target.value)} />
       </label>
       <label>
-        Load (kg), bodyweight = 0:
-        <input type="number" value={load} onChange={(event) => setLoad(event.target.value)} />
+        How was the workout?
+        <select type="text" value={rating} onChange={(event) => setRating(event.target.value)}>
+          <option value="">Choose from 1-6:</option>
+          <option value="Horrible/Sick">Horrible 1.</option>
+          <option value="Shite">Shite 2.</option>
+          <option value="Mellow">Medium 3.</option>
+          <option value="Pretty Good">Pretty Good 4.</option>
+          <option value="Strong and Explosive">Strong and explosive 5.</option>
+          <option value="Hot Chili, Best Feelgood!">Wow, I Feel Good 6.</option>
+        </select>
       </label>
       <label>
         Time spent (min) or reps:
         <input type="number" value={timeSpent} onChange={(event) => setTimeSpent(event.target.value)} />
+      </label>
+      <label>
+        Load (kg), bodyweight = 0:
+        <input type="number" value={load} onChange={(event) => setLoad(event.target.value)} />
       </label>
       <button type="submit">Add workout</button>
     </form>

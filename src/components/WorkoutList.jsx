@@ -27,6 +27,7 @@ function Workout({ workout, onDelete }) {
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
+      <div className="rating">Felt {workout.rating}</div>
       <div className="workout-info">{workout.info}</div>
       <p>
         <strong>Load (kg): </strong>
