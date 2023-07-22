@@ -27,11 +27,11 @@ function Workout({ workout, onDelete }) {
   return (
     <div className="workout-details">
       <h4>{workout.title}</h4>
-      <div className="rating">Felt {workout.rating}</div>
+      {workout.rating && <div className="rating">Felt {workout.rating}</div>}
       <div className="workout-info">{workout.info}</div>
       <p>
-        <strong>Load (kg): </strong>
-        {workout.load == 0 ? <>Bodyweight</> : <>{workout.load}</>}
+        <strong>Load: </strong>
+        {workout.load == 0 ? <>Bodyweight, no ekstra load</> : <>{workout.load} kg</>}
       </p>
       <p>
         <strong>Time spent (min) or reps:</strong> {workout.timeSpent}{' '}
