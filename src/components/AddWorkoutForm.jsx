@@ -6,6 +6,7 @@ export default function AddWorkoutForm({ onAdd }) {
   const [load, setLoad] = useState('');
   const [rating, setRating] = useState('');
   const [timeSpent, setTimeSpent] = useState('');
+  const [reps, setReps] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ export default function AddWorkoutForm({ onAdd }) {
       load,
       rating,
       timeSpent,
+      reps,
       createdAt: Date.now(),
     };
     onAdd(workout);
@@ -24,6 +26,7 @@ export default function AddWorkoutForm({ onAdd }) {
     setRating('');
     setLoad(0);
     setTimeSpent(0);
+    setReps(0);
   };
 
   const saveWorkout = (workout) => {
@@ -66,8 +69,12 @@ export default function AddWorkoutForm({ onAdd }) {
         </select>
       </label>
       <label>
-        Time spent (min) or reps:
+        Time spent (minutes):
         <input type="number" value={timeSpent} onChange={(event) => setTimeSpent(event.target.value)} />
+      </label>
+      <label>
+        Repetitions:
+        <input type="number" value={reps} onChange={(event) => setReps(event.target.value)} />
       </label>
       <label>
         Load (kg), bodyweight = 0:

@@ -34,8 +34,13 @@ function Workout({ workout, onDelete }) {
         {workout.load == 0 ? <>Bodyweight, no ekstra load</> : <>{workout.load} kg</>}
       </p>
       <p>
-        <strong>Time spent (min) or reps:</strong> {workout.timeSpent}{' '}
+        <strong>Time spent:</strong> {workout.timeSpent} minutes
       </p>
+      {workout.reps && (
+        <p>
+          <strong>Repetitions:</strong> {workout.reps} times
+        </p>
+      )}
       <p>{time} ago</p>
       <span onClick={handleDelete}>
         <TrashIcon height={15} />
