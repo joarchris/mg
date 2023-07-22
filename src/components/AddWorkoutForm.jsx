@@ -46,7 +46,7 @@ export default function AddWorkoutForm({ onAdd }) {
           <option value="Power">Power (4 weeks)</option>
           <option value="Endurance">Endurance (optional)</option>
           <option value="Power-Endurance">Power-Endurance (4 weeks)</option>
-          <option value="Projecting">Projecting (4-6 weeks)</option>
+          <option value="Peak Performance/Projecting Goal">Peak Performance or Projecting Goal (4-6 weeks)</option>
           <option value="Antagonist">Antagonist (Forebyggende)</option>
           <option value="Agonist">Agonist (Styrketrening)</option>
           <option value="Active Resting Day">Aktiv hviledag</option>
